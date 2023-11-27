@@ -13,7 +13,7 @@ class Empleado{
         $this->apellido = $apellido;
         $this->departamento = $departamento;
         $this->codigo = $codigo;
-        $this->codigo = $email;
+        $this->email = $email;
     }
     public function nombreEmpleado(){
         return "$this -> nombre";

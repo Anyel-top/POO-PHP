@@ -1,17 +1,17 @@
 <?php
 // herencia
 abstract class Persona{
-    private $nombre;
-    private $apellido;
-    private $email;
-    private $telefono;
+    private static $nombre;
+    private static $apellido;
+    private static $email;
+    private static $telefono;
 
     public function __construct($nombre, $apellido, $email, $telefono)
     {
-        $this -> nombre = $nombre;
-        $this -> apellido = $apellido;
-        $this -> email = $email;
-        $this -> telefono = $telefono;
+        self:: $nombre;
+        self:: $apellido;
+        self:: $email;
+        self:: $telefono;
        
     }
     public function mostrarInformacion(){
@@ -48,7 +48,9 @@ class Empleado extends Persona{
         $this -> codigo = $codigo;
         $this -> departamento = $departamento;
     }
-   
+    public static function obtenerEmpleado(){
+        echo "Metodo Estatico";
+    }
 }
 class Proveedor extends Persona{
     private $empresa;
@@ -60,9 +62,10 @@ class Proveedor extends Persona{
     }
     
 }
-$persona1 = new Persona('Angel', 'Patiño', 'appaino@espe.edu.ec', '0939470232');
+//$persona1 = new Persona('Angel', 'Patiño', 'appaino@espe.edu.ec', '0939470232');
 echo "<pre>";
-var_dump($persona1);
+//var_dump($persona1);
 echo "</pre>";
+Empleado::obtenerEmpleado();
 
 ?>

@@ -21,6 +21,7 @@ abstract class Persona{
     public function getNombre(){
         return $this->nombre;
     }
+    
     public function setNombre($nombre){
         return $this->nombre = $nombre;
     }
@@ -36,6 +37,7 @@ abstract class Persona{
     public function setEmail($email){
         return $this->email = $email;
     }
+    
 }
 class Empleado extends Persona{
     private $codigo;
@@ -51,6 +53,7 @@ class Empleado extends Persona{
     public static function obtenerEmpleado(){
         echo "Metodo Estatico";
     }
+    
 }
 class Proveedor extends Persona{
     private $empresa;
@@ -62,10 +65,12 @@ class Proveedor extends Persona{
     }
     
 }
-//$persona1 = new Persona('Angel', 'Patiño', 'appaino@espe.edu.ec', '0939470232');
+$persona1 = new Persona('Angel', 'Patiño', 'appaino@espe.edu.ec', '0939470232');
 echo "<pre>";
 //var_dump($persona1);
+
 echo "</pre>";
-Empleado::obtenerEmpleado();
+//Empleado::obtenerEmpleado();
+echo $persona1::getNombre();
 
 ?>
